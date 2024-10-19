@@ -38,8 +38,8 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 1.  Clone the Repository
     First, clone the repository to your local machine:
 
-        git clone https://github.com/your-username/your-repo.git
-        cd your-repo
+        git clone https://github.com/kishanbusa4u/Laravel11Vue3.git
+        cd Laravel11Vue3
 
 2.  Install PHP Dependencies
     Run the following command to install all PHP dependencies:
