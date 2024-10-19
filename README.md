@@ -80,58 +80,67 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 3.  Install JavaScript Dependencies
     Next, install the JavaScript dependencies, including Vue 3 and Bootstrap 5:
-    npm install
+
+        npm install
 
 4.  Configure the Environment
     Copy the example .env.example file to create your own .env file:
     cp .env.example .env
+    Open the .env file and update the following lines with your database credentials and other configuration:
 
-Open the .env file and update the following lines with your database credentials and other configuration:
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_database_user
-DB_PASSWORD=your_database_password
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=your_database_name
+        DB_USERNAME=your_database_user
+        DB_PASSWORD=your_database_password
 
-5. Generate Application Key
-   To ensure your application’s security, you need to generate an application key:
-   php artisan key:generate
+5.  Generate Application Key
+    To ensure your application’s security, you need to generate an application key:
 
-6. Run Database Migrations
-   Run the following command to create the necessary database tables:
-   php artisan migrate
+        php artisan key:generate
 
-7. Compile Frontend Assets
-   Compile the frontend assets (CSS and JavaScript) using Vite:
-   npm run dev
+6.  Run Database Migrations
+    Run the following command to create the necessary database tables:
+
+        php artisan migrate
+
+7.  Compile Frontend Assets
+    Compile the frontend assets (CSS and JavaScript) using Vite:
+
+        npm run dev
 
     For production:
-    npm run build
 
-8. Serve the Application
-   You can now run the application locally using the following command:
-   php artisan serve
+        npm run build
+
+8.  Serve the Application
+    You can now run the application locally using the following command:
+
+        php artisan serve
 
 By default, the application will be accessible at http://127.0.0.1:8000.
 
-9. Vue 3 Setup
-   Vue 3 is already integrated into the project using vite for asset bundling. Vue files are located in the resources/js directory.
+9.  Vue 3 Setup
+    Vue 3 is already integrated into the project using vite for asset bundling. Vue files are located in the resources/js directory.
+    Make sure your resources/js/app.js looks like this:
 
-Make sure your resources/js/app.js looks like this:
-import { createApp } from 'vue';
-import App from './components/App.vue';
+         import { createApp } from 'vue';
+         import App from './components/App.vue';
 
 // Import Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+        import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Optional: Import Bootstrap JS (for features like modals and tooltips)
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-createApp(App).mount('#app');
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+    createApp(App).mount('#app');
 
 The entry point for Vue components is in the Blade template located in resources/views/welcome.blade.php:
 
-<div id="app"></div>
+    <div id="app"></div>
+
 Make sure the @vite directive is present in welcome.blade.php:
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
